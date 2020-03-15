@@ -18,7 +18,7 @@ public class DynamoDBConfig {
 	public DynamoDBMapper dynamoDBMapper() {
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
 				.withCredentials(new AWSStaticCredentialsProvider(
-						new BasicAWSCredentials("AKIATG7TGEXJR5E3THUU", "TITTcX75krRPW6vebZyAzOcdZ+nfcBk/A24IJ6BT")))
+						new BasicAWSCredentials("<<Access Key ID>>", "<<Access Secret Key>>")))
 				.withRegion(Regions.AP_SOUTH_1).build();
 		return new DynamoDBMapper(client, DynamoDBMapperConfig.DEFAULT);
 	}
