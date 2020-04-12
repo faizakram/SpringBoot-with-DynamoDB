@@ -48,9 +48,7 @@ public class UserCrudDaoImpl implements UserCrudDao{
 		expectedAttributeValueMap.put("userId", new ExpectedAttributeValue(new AttributeValue().withS(userId)));
 		DynamoDBDeleteExpression deleteExpression = new DynamoDBDeleteExpression()
 				.withExpected(expectedAttributeValueMap);
-		/*
-		 * User user = User.builder().userId(userId).build();
-		 * dynamoDBMapper.delete(user, deleteExpression);
-		 */
+		User user = dynamoDBMapper.load(User.class, userId);
+		  dynamoDBMapper.delete(user, deleteExpression);
 	}
 }
